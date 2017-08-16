@@ -9,15 +9,39 @@ exports.get = (req, res) => {
   });
 };
 
-exports.post = (req, res) => {
-  const postIdeaQuery = `INSERT INTO users VALUES ('${req.body.firstname}', '${req.body.email}'); INSERT INTO ideas VALUES ((SELECT id FROM users WHERE email='${req.body.email}'), '${date.format()}', '${req.body.ideatitle}', '${req.body.ideadesc})';`;
+exports.post = (req, res, next) => {
+  const data = req.body;
+  const postSQL = `
+    INSERT INTO users(firstname, email)
+    VALUES (${data.firstname}', '${data.email}');
 
-  dbConnection.query(postIdeaQuery,
-    (err, res) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(res);
-      }
+    INSERT INTO ideas(userid, dateadded, ideatitle, ideadesc)
+    VALUES (
+      (SELECT id
+        FROM users
+        WHERE email='${data.email}'),
+      now(), '${data.ideatitle}', '${data.ideadesc}');
+    `;
+
+  const postToDatabase = () => {
+    return new Promise((resolve, reject) => {
+      dbConnection.query(postSQL,
+        (err, res) => {
+          if (err) {
+            reject(err, 'Error stuff:  ');
+          } else {
+            resolve(res, 'Response stuff:  ');
+          }
+        });
+    })
+  }
+  postToDatabase()
+    .then((stuff, text) => {
+      console.log(text, stuff);
+      res.redirect('/congratulations');
+    })
+    .catch((stuff, text) => {
+      res.status(404);
+      return next();
     });
 };

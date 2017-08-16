@@ -17,7 +17,7 @@ INSERT INTO users(firstname, email) VALUES
  CREATE TABLE ideas (
    id SERIAL PRIMARY KEY,
    userid int4 REFERENCES users(id),
-   dateadded VARCHAR(100) NOT NULL,
+   dateadded timestamp NOT NULL,
    ideatitle VARCHAR(100) NOT NULL,
    ideadesc TEXT NOT NULL
  );
