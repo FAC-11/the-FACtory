@@ -4,3 +4,7 @@
 exports.get = (req, res) => {
   res.render('viewIdea', {activePage: {viewIdea: true}});
 }
+
+exports.post = (req, res) => {
+  // Add post stuff
+};
