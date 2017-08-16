@@ -18,7 +18,7 @@ router.get('/browse', browse.get);
 router.get('/congratulations', congratulations.get);
 router.get('/view-idea', viewIdea.get);
 router.get('/new-idea', newIdea.get);
-router.post('/new-idea', newIdea.post);
+// router.post('/new-idea', newIdea.post);
 router.use(error.client);
 router.use(error.server);
 
