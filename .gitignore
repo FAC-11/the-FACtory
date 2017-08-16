@@ -1,3 +1,9 @@
+# config.env
+config.env
+
+# DS-store
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -56,4 +62,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
