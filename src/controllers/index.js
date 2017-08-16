@@ -8,7 +8,7 @@ const browse = require('./browse');
 const congratulations = require('./congratulations');
 const error = require('./error');
 const home = require('./home');
-const idea = require('./idea');
+const viewIdea = require('./view-idea');
 const newIdea = require('./new-idea');
 
 //our home route
@@ -16,9 +16,9 @@ const newIdea = require('./new-idea');
 router.get('/', home.get);
 router.get('/browse', browse.get);
 router.get('/congratulations', congratulations.get);
-router.get('/idea', idea.get);
-router.get('/new-idea', home.get);
+router.get('/view-idea', viewIdea.get);
+router.get('/new-idea', newIdea.get);
 router.use(error.client);
-route.use(error.server);
+router.use(error.server);
 
 module.exports = router;
