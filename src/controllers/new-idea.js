@@ -1,7 +1,7 @@
 exports.get = (req, res) => {
-  res.render('idea', {activePage: {idea: true}});
+  res.render('new-idea', {activePage: {idea: true}});
 }
 
-exports.post = (req, res) => {
-  
+exports.post = (req, res, next) => {
+  console.log("REQ.BODY: " , req.body);
 }
