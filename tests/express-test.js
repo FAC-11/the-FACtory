@@ -9,14 +9,14 @@ test('1 equals 1', (t) => {
   t.end();
 });
 
-// check we get 404 on /error endpoint
-test('404 on "/error" endpoint', (t) => {
+// check if supetest works
+test('check if supertest works', (t) => {
   supertest(app)
-    .get('/error')
-    .expect(404)
+    .get('/')
+    .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
-      t.same(res.statusCode, 404, 'Status code is 404');
+      t.same(res.statusCode, 200, 'Status code is 200');
       t.end();
     })
 })
@@ -46,3 +46,4 @@ for(let i=0; i<endpoints.length; i++){
       })
   })
 }
+
