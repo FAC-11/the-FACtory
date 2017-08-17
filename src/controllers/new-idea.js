@@ -1,5 +1,6 @@
 const dbConnection = require('../model/db_connection');
 const date = require('./date');
+const promises = require('./promise');
 
 exports.get = (req, res) => {
   res.render('new-idea', {
@@ -23,19 +24,10 @@ exports.post = (req, res, next) => {
       now(), '${data.ideatitle}', '${data.ideadesc}');
     `;
 
-  const postToDatabase = () => {
-    return new Promise((resolve, reject) => {
-      dbConnection.query(postSQL,
-        (err, res) => {
-          if (err) {
-            reject(err, 'Error stuff:  ');
-          } else {
-            resolve(res, 'Response stuff:  ');
-          }
-        });
+  promises.checkFirstname()
+    .then((data) => {
+      return promises.postToDatabase;
     })
-  }
-  postToDatabase()
     .then((stuff, text) => {
       console.log(text, stuff);
       res.redirect('/congratulations');
