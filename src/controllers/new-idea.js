@@ -29,11 +29,12 @@ promise.postToDatabase(postSQL, data)
       res.redirect('/congratulations');
     })
     .catch((err) => {
-      console.log(err);
+      const formattedErr = err.toString();
+      const newError = formattedErr.replace('Error: ', '');
       res.status(422).render('error', {
         layout: 'error',
         statusCode: 422,
-        errorMessage: err,
+        errorMessage: newError
       });
     });
 };
