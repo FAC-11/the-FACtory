@@ -18,15 +18,12 @@ exports.get = (req, res, next) => {
   }
   showData()
   .then ((stuff, text)=>{
-    // console.log(stuff,text);
     res.render('browse',{
       activePage:{
         browse: true
       },
       data: stuff.rows
     });
-    console.log('this is out stuff: ', stuff);
-    // res.rows??
   })
   .catch((stuff, text)=>{
     res.status(500);
