@@ -2,7 +2,7 @@
 const dbConnection = require('./../model/db_connection');
 
 exports.get = (req, res, next) => {
-  const getSql = 'SELECT ideatitle FROM ideas';
+  const getSql = 'SELECT userid, ideatitle FROM ideas ORDER BY dateadded DESC;';
 
   const showData = () => {
     return new Promise((resolve, reject) => {
