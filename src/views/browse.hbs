@@ -1,5 +1,7 @@
 {{#each data}}
-<a href="/browse/{{this.userid}}">
-<h1 style="text-align: center; font-family: sans-serif;">{{this.ideatitle}}</h1>
+<a href="/browse/{{this.userid}}" class="block">
+  <button class="landing_btn btn_browse">
+    {{this.ideatitle}}
+  </button>
 </a>
 {{/each}}
