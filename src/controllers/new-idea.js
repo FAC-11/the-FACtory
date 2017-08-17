@@ -26,14 +26,13 @@ exports.post = (req, res, next) => {
 
 promise.postToDatabase(postSQL, data)
     .then((data) => {
-      console.log('This b an error: ', data);
       res.redirect('/congratulations');
     })
     .catch((err) => {
       res.status(422).render('error', {
         layout: 'error',
         statusCode: 422,
-        errorMessage: newError
+        errorMessage: err.message
       });
     });
 };
