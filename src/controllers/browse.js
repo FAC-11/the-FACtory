@@ -25,7 +25,7 @@ exports.get = (req, res, next) => {
       },
       data: stuff.rows
     });
-    console.log('this is out stuff: ', stuff);
+    // console.log('this is out stuff: ', stuff);
     // res.rows??
   })
   .catch((stuff, text)=>{
