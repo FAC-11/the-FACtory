@@ -33,7 +33,7 @@ promise.postToDatabase(postSQL, data)
       res.status(422).render('error', {
         layout: 'error',
         statusCode: 422,
-        errorMessage: err,
+        errorMessage: newError
       });
     });
 };
