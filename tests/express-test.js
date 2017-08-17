@@ -1,6 +1,7 @@
 const test = require('tape');
 const supertest = require('supertest');
 const app = require('./../src/app');
+const endpoints = require('./endpoints');
 
 // check if tape works
 test('1 equals 1', (t) => {
@@ -8,14 +9,14 @@ test('1 equals 1', (t) => {
   t.end();
 });
 
-// check if supetest works
-test('check if supertest works', (t) => {
+// check we get 404 on /error endpoint
+test('404 on "/error" endpoint', (t) => {
   supertest(app)
-    .get('/')
-    .expect(200)
+    .get('/error')
+    .expect(404)
     .expect('Content-Type', /json/)
     .end((err, res) => {
-      t.same(res.statusCode, 200, 'Status code is 200');
+      t.same(res.statusCode, 404, 'Status code is 404');
       t.end();
     })
 })
@@ -32,16 +33,16 @@ test('404 when endpoint does not exist', (t) => {
     })
 })
 
-test('check prepopulated browse database table', (t) => {
-  supertest(app)
-    .get('/browse')
-    .expect(200)
-    .expect('Content-Type', /json/)
-    .end((err, res) => {
-      let expected = "Movie recommendation app";
-      let actual = res;
-      console.log('res.rows ', res);
-      t.equals(actual, expected, 'Should be Movie recommendation app')
-      t.end();
-    })
-})
+// looping through endpoints to check statusCode 200
+for(let i=0; i<endpoints.length; i++){
+  test(`check if status code of ${endpoints[i]} is 200`, (t) => {
+    supertest(app)
+      .get(endpoints[i])
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.same(res.statusCode, 200, `Status code of ${endpoints[i]} is 200`);
+        t.end();
+      })
+  })
+}
