@@ -1,6 +1,5 @@
-const dbConnection = require('../model/db_connection');
 const date = require('./date');
-const promises = require('./promise');
+const promise = require('./promise');
 
 exports.get = (req, res) => {
   res.render('new-idea', {
@@ -24,20 +23,17 @@ exports.post = (req, res, next) => {
       now(), '${data.ideatitle}', '${data.ideadesc}');
     `;
 
-  promises.checkFirstname(data)
-    .then((data) => {
-      console.log('firstname data: ', data);
-    return promises.checkEmail(data);
-    })
-    .then((data) => {
-      return promises.postToDatabase(data);
-    })
+promise.postToDatabase(postSQL, data)
     .then((data) => {
       console.log('This b an error: ', data);
       res.redirect('/congratulations');
     })
-    .catch((data) => {
-      res.status(404);
-      return next(stuff);
+    .catch((err) => {
+      console.log(err);
+      res.status(422).render('error', {
+        layout: 'error',
+        statusCode: 422,
+        errorMessage: err,
+      });
     });
 };
