@@ -17,7 +17,7 @@ const newIdea = require('./new-idea');
 router.get('/', home.get);
 router.get('/browse', browse.get);
 router.get('/congratulations', congratulations.get);
-router.get('/view-idea', viewIdea.get);
+router.get('/browse/:number', viewIdea.get);
 router.get('/new-idea', newIdea.get);
 router.post('/new-idea', newIdea.post);
 
