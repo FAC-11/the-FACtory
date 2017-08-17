@@ -16,7 +16,9 @@ a {
 }
 
 h1 {
-  color: purple;
+  color: white;
+  font-size: 6rem;
+  text-align: center;
 }
 
 img {
@@ -161,9 +163,28 @@ a {
 }
 
 
-
 .fa-home{
   font-size: 8rem;
   color: white;
   margin-top: 10rem;
+  display: inline-block;
+}
+.fa-lightbulb-o{
+  font-size: 8rem;
+  color: white;
+  margin-top: 0;
+}
+
+.ideas-home, .ideas-link {
+  display: inline-block;
+}
+
+.icon-container {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.congrats-text {
+  margin: 0 auto;
+  text-align: center;
 }
