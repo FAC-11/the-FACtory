@@ -5,6 +5,10 @@
 
 body {
   text-align: center;
+  margin: auto;
+  background-color: #2b2b2b;
+  font-family: 'Dosis', sans-serif;
+  transition: 2s ease;
 }
 
 a {
@@ -16,17 +20,64 @@ h1 {
 }
 
 img {
- display: block;
- margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
-.fa-lightbulb-o {
-  font-size: 250px;
+.icon {
+  width: 10vw;
+  margin-top: 5vh;
+  transition: 2s ease;
 }
 
 .landing_btn {
   display: block;
-  margin: 10px auto;
-  width: 300px;
-  height: 100px;
+  font-size: 3vw;
+  padding: 2rem;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  font-family: 'Dosis', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.landing_btn--skills {
+  background-color: #FF7C4C;
+  border: 1px solid #C63C09;
+  box-shadow: 0px 6px 0px #D13700, 0px 3px 15px rgba(0, 0, 0, .4);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .3);
+  box-shadow: inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: 0px 6px 0px #D13700, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -moz-box-shadow: 0px 6px 0px #D13700, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  box-shadow: 0px 6px 0px #C63C09, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+}
+
+.landing_btn--idea {
+  background-color: #8AE1FC;
+  border: 1px solid #2d6898;
+  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .3);
+  box-shadow: inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+}
+}
+
+.header {
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  font-size: 2rem;
+}
+
+.footer {
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
