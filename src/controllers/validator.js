@@ -1,17 +1,3 @@
-// const checkFirstName = (data) => {
-//   const firstname = data.firstname;
-//   const email = data.email;
-//   const regex = /^[_A-z0-9]((-|\s)[_A-z0-9])*$/g;
-//   if (!firstname) {
-//     let error = new Error('You need to write your name to continue');
-//     cb(error);
-//   } else if (firstname.match(regex)) {
-//     throw new Error('Please do not use symbols')
-//   } else if (firstname.length >= 100) {
-//     throw new Error('Your username is too long!')
-//   }
-// }
-
 const checkFirstName = (data, cb) => {
   const firstname = data.firstname;
   // if empty
