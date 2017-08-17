@@ -8,7 +8,7 @@
     "test-database": "node ./tests/database.test | tap-spec",
     "start:watch": "nodemon ./src/index.js",
     "coverage": "istanbul cover ./tests/database.test.js && istanbul cover ./tests/express-test.js",
-    "test": "node ./tests/express-test.js | tap-spec",
+    "test": "node ./tests/express-test.js | tap-spec"
   },
   "repository": {
     "type": "git",

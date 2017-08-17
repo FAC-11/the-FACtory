@@ -124,3 +124,26 @@ a {
 .block {
   display: inline-block;
 }
+
+.error__div{
+  text-align: center;
+  color: white;
+}
+
+.error__div--statuscode{
+  font-size: 15rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.error__div--message{
+  font-size: 3rem;
+}
+
+
+
+.fa-home{
+  font-size: 8rem;
+  color: white;
+  margin-top: 10rem;
+}
