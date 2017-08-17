@@ -1,5 +1,6 @@
 const dbConnection = require('./../model/db_connection');
 
+
 exports.get = (req, res, next) => {
   const getSql = 'SELECT users.firstname, ideas.dateadded, ideas.ideatitle, ideas.ideadesc FROM ideas INNER JOIN users ON users.id = ideas.userid';
 

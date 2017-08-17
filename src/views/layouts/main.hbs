@@ -1,2 +1,12 @@
-<h1>Test!</h1>
-{{{body}}}
+<!DOCTYPE html>
+<html>
+  {{> htmlHead }}
+
+  <body>
+    <div class="wrapper">
+    {{> header }}
+    {{{ body }}}
+    {{> footer }}
+  </div>
+  </body>
+</html>
