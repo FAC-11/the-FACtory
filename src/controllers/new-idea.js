@@ -1,4 +1,5 @@
-const dbConnection = require('../model/db_connection');
+const date = require('./date');
+const promise = require('./promise');
 
 exports.get = (req, res) => {
   res.render('new-idea', {
@@ -22,25 +23,17 @@ exports.post = (req, res, next) => {
       now(), '${data.ideatitle}', '${data.ideadesc}');
     `;
 
-  const postToDatabase = () => {
-    return new Promise((resolve, reject) => {
-      dbConnection.query(postSQL,
-        (err, res) => {
-          if (err) {
-            reject(err, 'Error stuff:  ');
-          } else {
-            resolve(res, 'Response stuff:  ');
-          }
-        });
-    })
-  }
-  postToDatabase()
-    .then((stuff, text) => {
-      console.log(text, stuff);
+promise.postToDatabase(postSQL, data)
+    .then((data) => {
+      console.log('This b an error: ', data);
       res.redirect('/congratulations');
     })
-    .catch((stuff, text) => {
-      res.status(404);
-      return next();
+    .catch((err) => {
+      console.log(err);
+      res.status(422).render('error', {
+        layout: 'error',
+        statusCode: 422,
+        errorMessage: err,
+      });
     });
 };
