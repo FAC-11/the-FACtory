@@ -26,7 +26,7 @@ img {
 
 .icon {
   width: 10vw;
-  margin-top: 5vh;
+  margin: 5vh auto;
   transition: 2s ease;
 }
 
@@ -80,4 +80,29 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.form__label{
+  display: block;
+  font-size: 2vw;
+  color: white;
+  margin-bottom: 1vh;
+}
+
+.idea-form input {
+  margin-bottom: 3.5vh;
+  width: 30vw;
+  font-size: 2vw;
+}
+
+.idea-form textarea {
+  font-size: 2vw;
+
+}
+.submit {
+  font-size: 5vh;
+  background-color: #44FFD1;
+  padding: 1vw;
+  width: auto;
+  margin-top: 2vh;
 }
