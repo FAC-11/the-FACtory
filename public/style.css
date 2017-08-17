@@ -30,6 +30,10 @@ img {
   transition: 2s ease;
 }
 
+.text {
+  transition: 2.2s ease;
+}
+
 .landing_btn {
   display: block;
   font-size: 3vw;
@@ -50,6 +54,12 @@ img {
   -webkit-box-shadow: 0px 6px 0px #D13700, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
   -moz-box-shadow: 0px 6px 0px #D13700, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
   box-shadow: 0px 6px 0px #C63C09, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+
+  }
+
+.landing_btn--skills:hover {
+  box-shadow: none;
+  transform: translateY(4px);
 }
 
 .landing_btn--idea {
@@ -62,7 +72,12 @@ img {
   -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
   box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
 }
+
+.landing_btn--idea:hover {
+  box-shadow: none;
+  transform: translateY(4px);
 }
+
 
 .header {
   color: white;
@@ -115,6 +130,11 @@ a {
   -moz-box-shadow: 0px 6px 0px #207d66, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
   box-shadow: 0px 6px 0px #207d66, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
   cursor: pointer;
+}
+
+.submit:hover {
+  box-shadow: none;
+  transform: translateY(4px);
 }
 
 .btn_browse {
