@@ -1,3 +1,3 @@
 exports.get = (req, res) => {
-  res.render('idea', {activePage: {idea: true}});
+  res.render('new-idea', {activePage: {idea: true}});
 }

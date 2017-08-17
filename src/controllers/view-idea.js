@@ -2,7 +2,7 @@
 // const viewIdea = require(./../model/db_connection);
 
 exports.get = (req, res) => {
-  res.render('viewIdea', {activePage: {viewIdea: true}});
+  res.render('view-idea', {activePage: {viewIdea: true}});
 }
 
 exports.post = (req, res) => {

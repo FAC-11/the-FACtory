@@ -1,3 +1,17 @@
+.wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+body {
+  text-align: center;
+}
+
 h1 {
   color: purple;
+}
+
+img {
+ display: block;
+ margin: 0 auto;
 }
