@@ -24,16 +24,20 @@ exports.post = (req, res, next) => {
       now(), '${data.ideatitle}', '${data.ideadesc}');
     `;
 
-  promises.checkFirstname()
+  promises.checkFirstname(data)
     .then((data) => {
-      return promises.postToDatabase;
+      console.log('firstname data: ', data);
+    return promises.checkEmail(data);
     })
-    .then((stuff, text) => {
-      console.log(text, stuff);
+    .then((data) => {
+      return promises.postToDatabase(data);
+    })
+    .then((data) => {
+      console.log('This b an error: ', data);
       res.redirect('/congratulations');
     })
-    .catch((stuff, text) => {
+    .catch((data) => {
       res.status(404);
-      return next();
+      return next(stuff);
     });
 };
