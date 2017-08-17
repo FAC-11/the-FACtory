@@ -13,7 +13,7 @@ exports.post = (req, res, next) => {
   const data = req.body;
   const postSQL = `
     INSERT INTO users(firstname, email)
-    VALUES (${data.firstname}', '${data.email}');
+    VALUES ('${data.firstname}', '${data.email}');
 
     INSERT INTO ideas(userid, dateadded, ideatitle, ideadesc)
     VALUES (
