@@ -1,5 +1,4 @@
 const dbConnection = require('../model/db_connection');
-const date = require('./date');
 
 exports.get = (req, res) => {
   res.render('new-idea', {
