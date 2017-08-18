@@ -23,18 +23,16 @@ exports.post = (req, res, next) => {
       now(), '${data.ideatitle}', '${data.ideadesc}');
     `;
 
+
 promise.postToDatabase(postSQL, data)
     .then((data) => {
-      console.log('This b an error: ', data);
       res.redirect('/congratulations');
     })
     .catch((err) => {
-      const formattedErr = err.toString();
-      const newError = formattedErr.replace('Error: ', '');
       res.status(422).render('error', {
         layout: 'error',
         statusCode: 422,
-        errorMessage: newError
+        errorMessage: err.message
       });
     });
 };
