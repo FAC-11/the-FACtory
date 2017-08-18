@@ -7,7 +7,7 @@
     "test-express": "node ./tests/express-test | tap-spec",
     "test-database": "node ./tests/database.test | tap-spec",
     "start:watch": "nodemon ./src/index.js",
-    "coverage": "istanbul cover ./tests/database.test.js && istanbul cover ./tests/express-test.js",
+    "coverage": "istanbul cover ./tests/database.test.js && istanbul cover ./tests/express-test.js && istanbul cover ./tests/validator.test.js",
     "test-validator": "node ./tests/validator.test.js | tap-spec"
   },
   "repository": {
