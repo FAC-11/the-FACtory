@@ -23,13 +23,14 @@ h1 {
 
 img {
   display: block;
-  margin: 0 auto;
 }
 
 .icon {
-  width: 10vw;
-  margin: 5vh auto;
+  width: 70vw;
+  position: inherit;
+  margin: 5vh 17vw;
   transition: 2s ease;
+
 }
 
 .text {
