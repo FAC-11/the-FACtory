@@ -16,11 +16,11 @@ const checkEmail = (data, cb) => {
   const email = data.email;
   const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (!email) {
-    cb(new Error('Please enter your email!'))
+    return cb(new Error('Please enter your email!'))
   } else if (!email.match(regex)) {
-    cb(new Error('Please enter a valid email address!'))
+    return cb(new Error('Please enter a valid email address!'))
   } else if (email.length >= 100) {
-    cb(new Error("You're email should not exceed 100 characters!"));
+    return cb(new Error("You're email should not exceed 100 characters!"));
   } else {
     return cb({ message: ''}, data);
   }
@@ -29,9 +29,11 @@ const checkEmail = (data, cb) => {
 const checkIdeaTitle = (data, cb) => {
   const title = data.ideatitle;
   if (!title) {
-    cb(new Error('Please write a name for your idea'));
+    return cb(new Error('Please write a name for your idea'));
   } else if (title.length >= 100) {
-    cb(new Error('Your idea name is too long!'));
+    return cb(new Error('Your idea name is too long!'));
+  } else if (title.match(/[^A-Z\s]/ig)) {
+      return cb(new Error('Title should not contain strange characters!'))
   } else {
     return cb({ message: ''}, data);
   }
@@ -40,7 +42,9 @@ const checkIdeaTitle = (data, cb) => {
 const checkIdeaDescription = (data, cb) => {
   const desc = data.ideadesc;
   if (!desc) {
-    cb(new Error('Please describe your idea'));
+    return cb(new Error('Please describe your idea'));
+  }  else if (desc.match(/[^A-Z\s]/ig)) {
+        return cb(new Error('Description should not contain strange characters!'))
   } else {
     return cb({ message: ''}, data);
   }

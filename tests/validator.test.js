@@ -46,6 +46,54 @@ test('checkEmail', (t) => {
   validator.checkEmail('', (err, res) => {
     let actual = err.message;
     t.equals(actual, expected, 'Should give error if empty');
+  });
+  var expected = '';
+  validator.checkEmail({ email: 'someone@someone.com'}, (err, res) => {
+    let actual = err.message;
+    t.equals(actual, expected, 'Should not give an error if email is valid');
+  });
+  var expected = 'Please enter a valid email address!';
+  validator.checkEmail({ email: 'te@st@test.com'}, (err, res) => {
+    let actual = err.message;
+    t.equals(actual, expected, 'should give error if more than one ampersand symbol is used');
+  });
+  var expected = 'Please enter a valid email address!';
+  validator.checkEmail({ email: 't est@test.com'}, (err, res) => {
+    let actual = err.message;
+    t.equals(actual, expected, 'should give error if contains spaces');
+  });
+  var expected = 'Please enter a valid email address!';
+  validator.checkEmail({ email: 't!est@test.com'}, (err, res) => {
+    let actual = err.message;
+    t.equals(actual, expected, 'should give error if contains special characters');
     t.end();
   });
+})
+
+test('checkIdeaTitle', (t) => {
+  var expected = 'Title should not contain strange characters!';
+  validator.checkIdeaTitle({ ideatitle: "select *"}, (err, res) => {
+    let actual = err.message;
+    t.equals(actual, expected, 'should give error if contains special characters')
+  })
+  var expected = '';
+  validator.checkIdeaTitle({ ideatitle: "search engine will rival google"}, (err, res) => {
+    let actual = err.message;
+    t.equals(actual, expected, 'should give no error if ideatitle is valid')
+    t.end();
+  })
+})
+
+test('checkIdeaDescription', (t) => {
+  var expected = 'Description should not contain strange characters!';
+  validator.checkIdeaDescription({ ideadesc: ";"}, (err, res) => {
+    let actual = err.message;
+    t.equals(actual, expected, 'should give error if contains special characters')
+  })
+  var expected = '';
+  validator.checkIdeaDescription({ ideadesc: "best app in the world"}, (err, res) => {
+    let actual = err.message;
+    t.equals(actual, expected, 'should give no error if description is valid')
+    t.end();
+  })
 })
