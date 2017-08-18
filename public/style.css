@@ -141,6 +141,24 @@ a {
 
 .btn_browse {
   display: inline;
+  background-color: #7AC7FF;
+  padding: 1.5vw;
+  width: auto;
+  margin-top: 2vh;
+  border-radius: 10px;
+  border: 1px solid #0496ff;
+  box-shadow: 0px 6px 0px #0496ff, 0px 3px 15px rgba(0, 0, 0, .4);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .3);
+  box-shadow: inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: 0px 6px 0px #0496ff, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  -moz-box-shadow: 0px 6px 0px #0496ff, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  box-shadow: 0px 6px 0px #0496ff, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+  cursor: pointer;
+}
+
+.btn_browse:hover {
+  box-shadow: none;
+  transform: translateY(4px);
 }
 
 .block {
