@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "tape ./tests/*.test.js | tap-spec",
     "test-express": "node ./tests/express-test | tap-spec",
     "test-database": "node ./tests/database.test | tap-spec",
     "start:watch": "nodemon ./src/index.js",
